@@ -2,4 +2,9 @@ t
 
 
 est
+<<<<<<< HEAD
 anna
+=======
+ 
+zsolti
+>>>>>>> 662dcaf075f0170f0a8d8bd35e48d14e75881d9a
