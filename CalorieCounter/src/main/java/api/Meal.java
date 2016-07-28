@@ -1,16 +1,18 @@
 package api;
 
+import java.util.Date;
+
 /**
  * Created by pocok on 7/28/16.
  */
-public class Meal {
+public class Meal{
 
     private final int id;
     private final String name;
     private final int calories;
-    private final String date;
+    private final Date date;
 
-    public Meal(int id, String name, int calories, String date) {
+    public Meal(int id, String name, int calories, Date date) {
       this.id = id;
       this.name = name;
       this.calories = calories;
@@ -29,9 +31,8 @@ public class Meal {
       return calories;
     }
 
-    public String getDate() {
+    public Date getDate() {
       return date;
     }
-
 
 }

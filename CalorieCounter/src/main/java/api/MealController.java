@@ -7,13 +7,19 @@ package api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.Date;
+import java.util.ArrayList;
 
 @RestController
 public class MealController {
 
-  @RequestMapping(value = "/meals", method = RequestMethod.GET)
-  public Meal meals(@RequestParam(value="name", defaultValue="World") String name) {
-    return new Meal(1, "Chili", 200, "2015");
+  Database mealDb = new Database();
+
+  @RequestMapping("/meals")
+  public ArrayList<Meal> meals() {
+    return mealDb.getList();
   }
 }
+
+
 
