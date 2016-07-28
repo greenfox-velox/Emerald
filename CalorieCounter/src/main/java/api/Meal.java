@@ -7,16 +7,23 @@ import java.util.Date;
  */
 public class Meal{
 
-    private final int id;
-    private final String name;
-    private final int calories;
-    private final Date date;
+    private int id;
+    private String name;
+    private int calories;
+    private String date;
 
-    public Meal(int id, String name, int calories, Date date) {
+    public Meal(){}
+
+
+  public Meal(int id, String name, int calories, String date) {
       this.id = id;
       this.name = name;
       this.calories = calories;
       this.date = date;
+    }
+
+    public void setId(int id) {
+      this.id = id;
     }
 
     public int getId() {
@@ -31,7 +38,7 @@ public class Meal{
       return calories;
     }
 
-    public Date getDate() {
+    public String getDate() {
       return date;
     }
 
