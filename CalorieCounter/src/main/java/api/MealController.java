@@ -4,6 +4,7 @@ package api;
  * Created by pocok on 7/28/16.
  */
 
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -30,10 +31,15 @@ public class MealController {
   }
 
   @RequestMapping(value = "/meals/{id}", method = RequestMethod.DELETE)
-  public void deleteMeal(@PathVariable String id) {
+  public Response deleteMeal(@PathVariable String id) {
+    if  (repository.exists(id)) {
     repository.delete(id);
+      return new Response("Ok");
   }
-
+    else{
+      return new Response("Does Not exist");
+    }
+  }
 }
 
 
