@@ -3,19 +3,29 @@ package api;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by pocok on 7/28/16.
  */
-
+@Document(collection = "meals")
 public class Meal {
 
   @Id
+  private String id;
   private String name;
   private int calories;
   private String date;
 
   public Meal() {
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public void setId(String id) {
+    this.id = id;
   }
 
   public String getName() {
